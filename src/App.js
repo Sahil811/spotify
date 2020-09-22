@@ -3,6 +3,9 @@ import "./App.css";
 import Login from "./components/Login";
 import Player from "./components/Player";
 import { getTokenFromResponse } from "./spotify";
+import SpotifyWebApi from "spotify-web-api-js";
+
+const spotify = new SpotifyWebApi();
 
 function App() {
   const [token, setToken] = useState(null);
@@ -14,6 +17,11 @@ function App() {
 
     if (_token) {
       setToken(_token);
+
+      spotify.setAccessToken(_token);
+      spotify.getMe().then((user) => {
+        console.log("user", user);
+      });
     }
   }, []);
 
