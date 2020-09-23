@@ -6,7 +6,7 @@ export const initialState = {
   top_artists: null,
   playing: false,
   item: null,
-  token: "hey",
+  token: "a",
 };
 
 const reducer = (state, action) => {

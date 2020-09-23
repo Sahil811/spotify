@@ -1,8 +1,27 @@
 import React from "react";
 import "./Body.css";
+import Header from "./Header";
+import { useStateValue } from "../StateProvider";
+import SongRow from "./SongRow";
+import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 
-const Body = () => {
-  return <div className="body">body</div>;
+const Body = ({ spotify }) => {
+  return (
+    <div className="body">
+      <Header spotify={spotify} />
+
+      <div className="body__info">
+        <img src="" alt="" />
+        <div className="body__infoText">
+          <strong>PLAYLIST</strong>
+          <h2>Discover Weekly</h2>
+          <p>description...</p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Body;
